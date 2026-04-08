@@ -1,0 +1,61 @@
+# OMNISIGHT — Quick Start Guide
+# VIT Bhopal University | SEEE Capstone 2022-2026
+#
+# ════════════════════════════════════════════════
+# STEP 1 — On your PC (do this FIRST)
+# ════════════════════════════════════════════════
+#
+#   python3 monitoring_client/pc_receiver.py
+#
+# Note your PC IP shown on screen, e.g. 192.168.0.100
+#
+# ════════════════════════════════════════════════
+# STEP 2 — Edit config on Raspberry Pi
+# ════════════════════════════════════════════════
+#
+# Edit: omnisight_ws/src/omnisight_patrol/config/patrol_waypoints.yaml
+#   monitoring_device_ip: "192.168.0.100"   ← your PC IP
+#   simulation_mode: false                  ← true for testing
+#
+# ════════════════════════════════════════════════
+# STEP 3 — Add authorised face photos
+# ════════════════════════════════════════════════
+#
+# Put ONE .jpg photo per person in:
+#   config/known_faces/jay.jpg
+#   config/known_faces/vivek.jpg
+#   config/known_faces/shiv.jpg
+#
+# ════════════════════════════════════════════════
+# STEP 4 — Build and run on Raspberry Pi
+# ════════════════════════════════════════════════
+#
+#   cd ~/omnisight_ws
+#   colcon build --packages-select omnisight_patrol
+#   source install/setup.bash
+#   ros2 launch omnisight_patrol patrol_system.launch.py
+#
+# ════════════════════════════════════════════════
+# INSTALL DEPENDENCIES (first time only)
+# ════════════════════════════════════════════════
+#
+#   pip3 install mediapipe face-recognition scikit-image \
+#                PyYAML adafruit-circuitpython-pca9685 \
+#                RPi.GPIO opencv-python numpy
+#
+# ════════════════════════════════════════════════
+# ROS2 TOPICS (for debugging)
+# ════════════════════════════════════════════════
+#
+#   ros2 topic echo /omnisight/patrol_state
+#   ros2 topic echo /omnisight/ultrasonic_distance
+#   ros2 topic echo /omnisight/alert/stranger
+#   ros2 topic echo /omnisight/alert/scene_change
+#
+# ════════════════════════════════════════════════
+# SIMULATION MODE (no hardware needed)
+# ════════════════════════════════════════════════
+#
+# Set simulation_mode: true in patrol_waypoints.yaml
+# Then run the same launch command — all nodes start,
+# motors/servos/sensors are simulated in software.

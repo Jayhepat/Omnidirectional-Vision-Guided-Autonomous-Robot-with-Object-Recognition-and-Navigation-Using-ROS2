@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================
+  Omnisight Patrol Room Configuration
+  VIT Bhopal University — SEEE Capstone 2022-2026
+  ============================================================
+
+  Room coordinate system:
+    Origin (0,0) = bottom-left corner of room
+    X = rightward (metres)
+    Y = forward (metres)
+    All dimensions in metres
+
+  Room: 8m x 6m indoor lab/office
+  Point A (home/base) = (0.5, 0.5) — charging dock corner
+
+  EDIT THIS FILE to match your actual room layout.
+  ============================================================
+-->
+<omnisight_room version="1.0">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- ROOM DIMENSIONS                                     -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <room>
+    <name>SEEE Lab Patrol Area</name>
+    <width_m>8.0</width_m>
+    <height_m>6.0</height_m>
+    <description>Indoor laboratory/office patrol environment</description>
+  </room>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BASE / HOME POSITION (Point A)                      -->
+  <!-- Robot starts here, returns here after every patrol  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <base_position>
+    <x>0.5</x>
+    <y>0.5</y>
+    <heading_deg>0</heading_deg>
+    <description>Charging dock — bottom-left corner</description>
+    <dock_tolerance_m>0.20</dock_tolerance_m>
+  </base_position>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PATROL WAYPOINTS                                    -->
+  <!-- Robot visits these in order during patrol           -->
+  <!-- pan_tilt_angle: camera pan position at this point   -->
+  <!-- dwell_sec: how long to pause and scan at this point -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <patrol_waypoints>
+
+    <waypoint id="1">
+      <x>0.5</x><y>0.5</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>2.0</dwell_sec>
+      <label>START — Point A (Base)</label>
+    </waypoint>
+
+    <waypoint id="2">
+      <x>2.0</x><y>0.5</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>-30</pan_angle_deg>
+      <tilt_angle_deg>10</tilt_angle_deg>
+      <dwell_sec>1.5</dwell_sec>
+      <label>South wall — entry door zone</label>
+    </waypoint>
+
+    <waypoint id="3">
+      <x>4.0</x><y>0.5</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>South wall — centre</label>
+    </waypoint>
+
+    <waypoint id="4">
+      <x>6.5</x><y>0.5</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>30</pan_angle_deg>
+      <tilt_angle_deg>10</tilt_angle_deg>
+      <dwell_sec>1.5</dwell_sec>
+      <label>South wall — window zone</label>
+    </waypoint>
+
+    <waypoint id="5">
+      <x>7.5</x><y>0.5</y>
+      <heading_deg>90</heading_deg>
+      <pan_angle_deg>60</pan_angle_deg>
+      <tilt_angle_deg>5</tilt_angle_deg>
+      <dwell_sec>2.0</dwell_sec>
+      <label>South-East corner</label>
+    </waypoint>
+
+    <waypoint id="6">
+      <x>7.5</x><y>2.0</y>
+      <heading_deg>90</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>East wall — lower</label>
+    </waypoint>
+
+    <waypoint id="7">
+      <x>7.5</x><y>3.5</y>
+      <heading_deg>90</heading_deg>
+      <pan_angle_deg>-20</pan_angle_deg>
+      <tilt_angle_deg>15</tilt_angle_deg>
+      <dwell_sec>1.5</dwell_sec>
+      <label>East wall — centre window check</label>
+    </waypoint>
+
+    <waypoint id="8">
+      <x>7.5</x><y>5.5</y>
+      <heading_deg>180</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>10</tilt_angle_deg>
+      <dwell_sec>2.0</dwell_sec>
+      <label>North-East corner</label>
+    </waypoint>
+
+    <waypoint id="9">
+      <x>5.5</x><y>5.5</y>
+      <heading_deg>180</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>North wall — right</label>
+    </waypoint>
+
+    <waypoint id="10">
+      <x>4.0</x><y>5.5</y>
+      <heading_deg>180</heading_deg>
+      <pan_angle_deg>20</pan_angle_deg>
+      <tilt_angle_deg>-5</tilt_angle_deg>
+      <dwell_sec>1.5</dwell_sec>
+      <label>North wall — centre curtain check</label>
+    </waypoint>
+
+    <waypoint id="11">
+      <x>2.0</x><y>5.5</y>
+      <heading_deg>180</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>North wall — left</label>
+    </waypoint>
+
+    <waypoint id="12">
+      <x>0.5</x><y>5.5</y>
+      <heading_deg>270</heading_deg>
+      <pan_angle_deg>-60</pan_angle_deg>
+      <tilt_angle_deg>5</tilt_angle_deg>
+      <dwell_sec>2.0</dwell_sec>
+      <label>North-West corner</label>
+    </waypoint>
+
+    <waypoint id="13">
+      <x>0.5</x><y>3.5</y>
+      <heading_deg>270</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>West wall — centre</label>
+    </waypoint>
+
+    <waypoint id="14">
+      <x>0.5</x><y>2.0</y>
+      <heading_deg>270</heading_deg>
+      <pan_angle_deg>30</pan_angle_deg>
+      <tilt_angle_deg>5</tilt_angle_deg>
+      <dwell_sec>1.0</dwell_sec>
+      <label>West wall — lower</label>
+    </waypoint>
+
+    <waypoint id="15">
+      <x>4.0</x><y>3.0</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>3.0</dwell_sec>
+      <label>CENTRE — full 360 scan point</label>
+    </waypoint>
+
+    <waypoint id="16">
+      <x>0.5</x><y>0.5</y>
+      <heading_deg>0</heading_deg>
+      <pan_angle_deg>0</pan_angle_deg>
+      <tilt_angle_deg>0</tilt_angle_deg>
+      <dwell_sec>2.0</dwell_sec>
+      <label>RETURN — Point A (Base)</label>
+    </waypoint>
+
+  </patrol_waypoints>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- STATIC OBSTACLES                                    -->
+  <!-- Robot avoids these during path planning             -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <obstacles>
+    <obstacle id="1">
+      <type>desk</type>
+      <x>2.0</x><y>2.0</y>
+      <width>1.5</width><depth>0.8</depth>
+      <label>Lab desk 1</label>
+    </obstacle>
+    <obstacle id="2">
+      <type>desk</type>
+      <x>4.5</x><y>2.0</y>
+      <width>1.5</width><depth>0.8</depth>
+      <label>Lab desk 2</label>
+    </obstacle>
+    <obstacle id="3">
+      <type>cabinet</type>
+      <x>6.5</x><y>3.0</y>
+      <width>0.6</width><depth>0.4</depth>
+      <label>Storage cabinet</label>
+    </obstacle>
+    <obstacle id="4">
+      <type>chair</type>
+      <x>2.5</x><y>4.0</y>
+      <width>0.5</width><depth>0.5</depth>
+      <label>Chair cluster</label>
+    </obstacle>
+  </obstacles>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SCENE MONITOR ZONES                                 -->
+  <!-- Areas where scene change detection is active        -->
+  <!-- Robot captures baseline images of these zones       -->
+  <!-- and compares on every patrol                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <scene_zones>
+
+    <zone id="1">
+      <label>Main Entry Door</label>
+      <type>door</type>
+      <near_waypoint_id>2</near_waypoint_id>
+      <x>1.5</x><y>0.0</y>
+      <width>1.0</width>
+      <change_threshold_pct>15.0</change_threshold_pct>
+      <description>Main entrance door — detect if open/closed state changes</description>
+    </zone>
+
+    <zone id="2">
+      <label>South Window</label>
+      <type>window</type>
+      <near_waypoint_id>4</near_waypoint_id>
+      <x>6.0</x><y>0.0</y>
+      <width>1.2</width>
+      <change_threshold_pct>12.0</change_threshold_pct>
+      <description>South-facing window — detect if curtain/blind state changes</description>
+    </zone>
+
+    <zone id="3">
+      <label>North Curtain</label>
+      <type>curtain</type>
+      <near_waypoint_id>10</near_waypoint_id>
+      <x>3.5</x><y>6.0</y>
+      <width>2.0</width>
+      <change_threshold_pct>10.0</change_threshold_pct>
+      <description>North wall curtain — detect if opened or displaced</description>
+    </zone>
+
+    <zone id="4">
+      <label>East Window</label>
+      <type>window</type>
+      <near_waypoint_id>7</near_waypoint_id>
+      <x>8.0</x><y>3.0</y>
+      <width>1.5</width>
+      <change_threshold_pct>12.0</change_threshold_pct>
+      <description>East-facing window — detect if open state changes</description>
+    </zone>
+
+    <zone id="5">
+      <label>Cabinet Area</label>
+      <type>object</type>
+      <near_waypoint_id>6</near_waypoint_id>
+      <x>6.5</x><y>3.0</y>
+      <width>1.0</width>
+      <change_threshold_pct>20.0</change_threshold_pct>
+      <description>Storage cabinet area — detect if items displaced or removed</description>
+    </zone>
+
+    <zone id="6">
+      <label>Room Centre</label>
+      <type>general</type>
+      <near_waypoint_id>15</near_waypoint_id>
+      <x>4.0</x><y>3.0</y>
+      <width>3.0</width>
+      <change_threshold_pct>25.0</change_threshold_pct>
+      <description>General room centre — broad scene change detection</description>
+    </zone>
+
+  </scene_zones>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PATROL SETTINGS                                     -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <patrol_settings>
+    <patrol_interval_minutes>30</patrol_interval_minutes>
+    <robot_speed_ms>0.20</robot_speed_ms>
+    <waypoint_tolerance_m>0.15</waypoint_tolerance_m>
+    <obstacle_stop_distance_m>0.30</obstacle_stop_distance_m>
+    <camera_fps>30</camera_fps>
+    <alert_image_quality>85</alert_image_quality>
+    <buzzer_duration_sec>3.0</buzzer_duration_sec>
+    <baseline_capture_waypoints>2,4,7,10,12,15</baseline_capture_waypoints>
+  </patrol_settings>
+
+</omnisight_room>
