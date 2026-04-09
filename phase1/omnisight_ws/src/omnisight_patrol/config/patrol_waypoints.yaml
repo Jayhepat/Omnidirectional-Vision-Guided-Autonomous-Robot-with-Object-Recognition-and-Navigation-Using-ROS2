@@ -27,7 +27,7 @@ omnisight:
   motor_pwm_freq: 50
   motor_max_pwm: 4095
   ultrasonic_trigger_pin: 18
-  ultrasonic_echo_pin: 24
+  ultrasonic_echo_pin: 25
   obstacle_stop_distance_m: 0.30
   obstacle_avoid_distance_m: 0.50
   buzzer_pin: 17
